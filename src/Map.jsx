@@ -27,7 +27,7 @@ export const Map = ({ setSpecialEarth, radius }) => {
         <CircleMarker
           key={i}
           center={[d.geometry.coordinates[1], d.geometry.coordinates[0]]}
-          radius={(d.properties.mag**radius/2)}
+          radius={(d.properties.mag**radius*2)}
           pathOptions={{
           color: '#FF0000',      // Border color (Red)
           fillColor: '#00FF00',
@@ -38,7 +38,7 @@ export const Map = ({ setSpecialEarth, radius }) => {
             {d.properties.title}
             <br />
 
-            <Button variant="outlined" color = 'info' size = 'smal' onClick={() => {
+            <Button variant="outlined" color = 'info' size = 'small' onClick={() => {
               setSpecialEarth(d)                
             }}>
               Mehr Infos

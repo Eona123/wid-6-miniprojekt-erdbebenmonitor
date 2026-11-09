@@ -79,7 +79,11 @@ export default function Sidebar({ specialEarth, radius, setRadius }) {
               variant="body2"
               sx={{ color: 'text.primary' }}
             >
-              {new Date(specialEarth.properties?.time?? "").toLocaleString()}
+              {/*new Date(specialEarth.properties?.time?? "").toLocaleString()*/}
+              {(specialEarth.properties?.time 
+                ? new Date(specialEarth.properties?.time)
+                  : ""
+              ).toLocaleString()}
             </Typography>
           </Typography>
         </CardContent>
@@ -95,7 +99,6 @@ export default function Sidebar({ specialEarth, radius, setRadius }) {
             valueLabelDisplay="auto"
             value={radius}
             step={0.5}
-            marks
             min={1}
             max={3}
             marks={marks}
