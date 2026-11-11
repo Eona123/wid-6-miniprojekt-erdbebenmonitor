@@ -1,13 +1,13 @@
 import { MapContainer, TileLayer, CircleMarker, Popup, GeoJSON, } from "react-leaflet";
 
-import data from "./assets/4.5_week.geojson.json";
+// import data from "./assets/4.5_week.geojson.json";
 import plattenboundries from "./assets/plate_boundaries.geojson.json"
 
 // --------------------- Import Material MUI ----------------------------//
 import Button from '@mui/material/Button';
 
-export const Map = ({ setSpecialEarth, radius }) => {
-  const earthquakes = data.features; // Wir benötigen nur den Feature-Array aus den Daten
+export const Map = ({ erdbeben, setErdbeben, setSpecialEarth, radius}) => {
+  const earthquakes = erdbeben.features || []; // Wir benötigen nur den Feature-Array aus den Daten
 
   return (
     <MapContainer
